@@ -1,19 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
+using Strategy.Algorithms;
+using Strategy.GreetingAlgorithms;
 
 namespace Strategy
 {
 	public class Client
 	{
-		public Client ()
-		{
-			
-		}
+        private readonly IGreetingAlgorithm _greetingAlgorithm;
+
+        public Client (IGreetingAlgorithm greetingAlgorithm)
+        {
+            _greetingAlgorithm = greetingAlgorithm;
+        }
 
 		public IEnumerable<string> ProcessNames(IEnumerable<string> names) 
 		{
-			var algorithm = new Algorithms.Formal ();
-			return algorithm.Execute (names);
+			return _greetingAlgorithm.Execute (names);
 		}
 	}
 }

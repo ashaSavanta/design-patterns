@@ -1,10 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
+using Strategy.Algorithms;
 
-namespace Strategy.Algorithms
+namespace Strategy.GreetingAlgorithms
 {
-	public class Informal
+	public class Informal : IGreetingAlgorithm
 	{
 		public IEnumerable<string> Execute(IEnumerable<string> inputList)
 		{
